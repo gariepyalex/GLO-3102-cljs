@@ -1,4 +1,4 @@
-(ns moviesclj.home)
+(ns moviesclj.view.home)
 
 (defn page
   []

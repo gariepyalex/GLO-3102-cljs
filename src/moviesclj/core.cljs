@@ -1,7 +1,8 @@
 (ns ^:figwheel-always moviesclj.core
-  (:require [moviesclj.home :as home]
-            [moviesclj.actor :as actor-component]
-            [moviesclj.navbar :as navbar]
+  (:require [moviesclj.view.home :as home]
+            [moviesclj.view.movie :as movie-component]
+            [moviesclj.view.actor :as actor-component]
+            [moviesclj.view.navbar :as navbar]
             [moviesclj.authentication.authentication :as authentication]
             [moviesclj.authentication.sign-up :as sign-up]
             [reagent.core :as reagent]
@@ -37,6 +38,9 @@
 
 (secretary/defroute "/actors/:id" [id]
   (session/put! :current-page (actor-component/actor-component id)))
+
+(secretary/defroute "/movies/:id" [id]
+  (session/put! :current-page (movie-component/movie-component id)))
 
 (secretary/defroute "*" []
   (session/put! :current-page page-not-found))

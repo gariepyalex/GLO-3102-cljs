@@ -1,4 +1,4 @@
-(ns moviesclj.navbar
+(ns moviesclj.view.navbar
   (:require [moviesclj.utils :as utils]
             [reagent.core :as reagent]
             [reagent.session :as session]
