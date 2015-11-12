@@ -9,8 +9,9 @@
 (defn add-high-res-img!
   []
   (let [low-res-img (:artworkUrl100 @movie-data)]
-    (swap! movie-data assoc :artworkUrl500
-           (string/replace  low-res-img #"100x100" "500x500"))))
+    (when low-res-img
+      (swap! movie-data assoc :artworkUrl500
+             (string/replace  low-res-img #"100x100" "500x500")))))
 
 (defn movie-component
   [id]

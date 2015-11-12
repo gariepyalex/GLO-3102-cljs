@@ -17,7 +17,6 @@
   [key form-input]
   (swap! login-data assoc key (utils/input-value form-input)))
 
-
 (defn- submit-sign-in
   [click-event]
   (.preventDefault click-event)
